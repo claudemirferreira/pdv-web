@@ -6,6 +6,12 @@ export const childRoutes = [
       data: { icon: 'attach_money', text: 'Venda' }
   },
   {
+    path: 'produto',
+    loadChildren: () =>
+      import('./produto/produto.module').then(m => m.ProdutoModule),
+      data: { icon: 'attach_money', text: 'Produto' }
+  },
+  {
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then(m => m.DashboardModule),
