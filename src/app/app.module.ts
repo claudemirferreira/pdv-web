@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
     AutocompleteLibModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

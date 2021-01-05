@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: CreateProdutoComponent
+    component: ListProdutoComponent
   }
 ];
 
