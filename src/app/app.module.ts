@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +19,10 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    SharedModule
+    SharedModule,    
+    ToastrModule.forRoot(),
+    NgxUiLoaderModule,
+    AutocompleteLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ResponseApi } from 'src/app/sherad/model/response-api';
 import { Produto } from '../produto';
 import { ProdutoService } from '../produto.service';
@@ -10,10 +14,13 @@ import { ProdutoService } from '../produto.service';
 })
 export class CreateProdutoComponent implements OnInit {
 
-  produto: Produto;
-
   constructor(
     private service: ProdutoService,
+    public dialogRef: MatDialogRef<CreateProdutoComponent>,
+    private ngxLoader: NgxUiLoaderService,
+    private toastr: ToastrService,
+    private fb: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public produto: Produto
   ) {}
 
   ngOnInit(): void {
@@ -28,14 +35,23 @@ export class CreateProdutoComponent implements OnInit {
   }
 
   salvar(){
-    //this.ngxLoader.start();
+    this.ngxLoader.start();
     this.service.save(this.produto).subscribe((responseApi: ResponseApi) => {
       console.log(responseApi['content']);
-      //this.showSuccess();
-      //this.ngxLoader.stop();
+      this.showSuccess();
+      this.ngxLoader.stop();
     }, err => {
       console.log('################error');
+      this.showError();
     });
+  }
+
+  showSuccess() {
+    this.toastr.success('Operação realizada com sucesso!', 'Sucesso');
+  }
+
+  showError() {
+    this.toastr.error('Ocorreu um error!', 'Error');
   }
 
 }
