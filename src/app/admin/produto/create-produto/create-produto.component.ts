@@ -17,10 +17,13 @@ export class CreateProdutoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.produto = new Produto();
     this.produto.nome = 'teste';
     this.produto.precoCompra = 20;
     this.produto.precoVenda = 40;
+    console.log(JSON.stringify(this.produto));
+    this.salvar();
 
   }
 
