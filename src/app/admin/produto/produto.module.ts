@@ -6,13 +6,18 @@ import { CreateProdutoComponent } from './create-produto/create-produto.componen
 import { ListProdutoComponent } from './list-produto/list-produto.component';
 import { MatComponentsModule } from '../mat-components/mat-components.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
   declarations: [CreateProdutoComponent, ListProdutoComponent],
   imports: [
     CommonModule,
-    ProdutoRoutingModule,
+    ProdutoRoutingModule,    
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class ProdutoModule { }

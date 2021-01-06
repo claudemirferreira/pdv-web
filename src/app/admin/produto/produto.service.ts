@@ -20,12 +20,11 @@ export class ProdutoService extends CrudService<Produto>{
   }
 
   listarTodos() {
-    console.log('listarTodos');
     return this.http.get(`${this.API_URL}`);
   }
-
-  pesquisar(pageableDTO: PageableDTO) {
-      return this.http.post(this.API_URL+'pesquisar', pageableDTO).pipe(take(1));
+  
+  pesquisar(record: PageableDTO) {
+    return this.http.post(this.API_URL+'pesquisar', record).pipe(take(1));
   }
 
 }

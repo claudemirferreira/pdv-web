@@ -25,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgxUiLoaderModule,
     AutocompleteLibModule,
     MatDialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

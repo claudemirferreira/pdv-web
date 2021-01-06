@@ -29,7 +29,7 @@ export class ListProdutoComponent implements OnInit {
   length = 0;
   pageSize = 10;
   pageIndex = 1;
-  pageSizeOptions: number[] = [5, 10, 20,];
+  pageSizeOptions: number[] = [5, 10, 20];
   // MatPaginator Output
   pageEvent: PageEvent;
   size: 10;
@@ -42,15 +42,17 @@ export class ListProdutoComponent implements OnInit {
 
   ngOnInit(): void {
     this.pageableDTO = new PageableDTO();
-    this.pageableDTO.nome = 'a';
-    this.pageableDTO.page = 1
-    this.pageableDTO.size = 1
+    this.pageableDTO.nome = 'o';
+    this.pageableDTO.page = 0
+    this.pageableDTO.size = 5
     this.pesquisar()
   }
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {
     if (setPageSizeOptionsInput) {
-      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+      this.pageSizeOptions = setPageSizeOptionsInput
+        .split(",")
+        .map((str) => +str);
     }
   }
 
@@ -60,8 +62,13 @@ export class ListProdutoComponent implements OnInit {
       (responseApi: ResponseApi) => {
         console.log(responseApi["content"]);
         this.lista = new MatTableDataSource<Produto>(responseApi["content"]);
-        //this.lista = responseApi["content"];
-        //this.lista.sort = this.sort;
+        this.lista.sort = this.sort;
+        
+        this.pageableDTO.totalElements = responseApi["totalElements"];
+        this.pageableDTO.pageSize = responseApi["totalPages"];
+        this.pageableDTO.pageIndex = responseApi["number"];
+        this.pageableDTO.pageSize = responseApi["size"];
+
         console.log(this.lista);
 
         this.ngxLoader.stop();
@@ -70,6 +77,13 @@ export class ListProdutoComponent implements OnInit {
         this.showError();
       }
     );
+  }
+
+  
+  pageChange($event) {
+    this.pageableDTO.size = $event.pageSize;
+    this.pageableDTO.page = $event.pageIndex;
+    this.pesquisar();
   }
 
   showSuccess() {
