@@ -8,6 +8,7 @@ import { MatComponentsModule } from '../mat-components/mat-components.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ProdutoRoutingModule,    
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule,
+    MatIconModule,
   ]
 })
 export class ProdutoModule { }

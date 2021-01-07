@@ -1,6 +1,7 @@
 table {
     width: 100%;
     background-color: #eaeaea;
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
   }
   
   .mat-cell {
@@ -12,11 +13,16 @@ table {
   }
   
   .mat-header-cell {
-    background-color: rgb(200,200,200);
+    background-color: #1976d2;
     border: 0.5px solid rgb(128,128,128);
     font-weight:bold;
-    font-size: 14px;
+    font-size: 10px;
+    color: white;
+    font: 500 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    white-space: nowrap;
     padding-left: 5px;
+
   }
   
   th.mat-sort-header-sorted {
@@ -61,19 +67,6 @@ table {
     width: 100%;
   }
   
-  .error {
-    padding: 10px;
-    width: 300px;
-    color: goldenrod;
-  }
-  
-  .titulo {
-    font-weight: bold;
-    color: #6a1212;
-    padding: 5px;
-    text-align: left;
-    width: 100%;
-  }
   
   .example-container {
     display: flex;
@@ -96,4 +89,5 @@ table {
   
   mat-paginator {
     background-color: #eaeaea;
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
   }

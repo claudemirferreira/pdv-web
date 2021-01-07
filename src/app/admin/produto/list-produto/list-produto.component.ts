@@ -79,6 +79,9 @@ export class ListProdutoComponent implements OnInit {
     );
   }
 
+  onLoggedout(){
+    console.log('okkkk');
+  }
   
   pageChange($event) {
     this.pageableDTO.size = $event.pageSize;
