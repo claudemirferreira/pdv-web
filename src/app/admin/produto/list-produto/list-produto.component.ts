@@ -24,7 +24,7 @@ export class ListProdutoComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  displayedColumns: string[] = ['nome', 'acao'];
+  displayedColumns: string[] = ['nome', 'precoVenda', 'precoCompra', 'acao'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   length = 0;
   pageSize = 10;
