@@ -11,6 +11,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
     AutocompleteLibModule,
-    MatDialogModule,
     
   ],
   providers: [],

@@ -12,6 +12,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { SideNavComponent } from './layout/side-nav/side-nav.component';
     MatIconModule,
     MatInputModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
   ],
   declarations: [LayoutComponent, TopNavComponent, SideNavComponent]
 })
