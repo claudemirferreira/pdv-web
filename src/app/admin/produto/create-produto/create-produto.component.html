@@ -1,21 +1,44 @@
-<div class="mb20" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Sample Layout Page</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        Application Shell using Angular Flex Layout
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <a mat-flat-button routerLink="/sample-layout">Take a look!</a>
-      
-      <button mat-button  ><mat-icon aria-hidden="false" aria-label="Pesquisar">search</mat-icon>Pesquisar</button>
-      <button mat-button  ><mat-icon aria-hidden="false" aria-label="Pesquisar">add_circle</mat-icon>Novo</button>
-      <button >
-        <mat-icon>exit_to_app</mat-icon>
-      </button>  
-    </mat-card-actions>
-  </mat-card>
+<div class="dashboard">
+  <div fxLayout="column">
+    <div fxFlex class="main-content">
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutAlign=" stretch" fxLayoutGap.gt-sm="1rem">
+      <div fxFlex fxFlex.lt-md="100" class="secondary-content">
+        <form [formGroup]="formGroup" (ngSubmit)="salvar()" novalidate>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Cadastro de Produto</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>Nome</mat-label>
+              <input matInput [(ngModel)]="produto.nome" formControlName="nome">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="example-50-width">
+              <mat-label>Preço Venda</mat-label>
+              <input matInput [(ngModel)]="produto.precoVenda" formControlName="precoVenda">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="example-0-width">
+              <mat-label>Preço Compra</mat-label>
+              <input matInput [(ngModel)]="produto.precoCompra" formControlName="precoCompra">
+            </mat-form-field>
+
+          </mat-card-content>
+          <mat-card-actions>
+
+            <button mat-button>
+              <mat-icon >add_circle</mat-icon>Novo
+            </button>
+            <button (click)="salvar()">
+              <mat-icon>exit_to_app</mat-icon>Salvar
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+      </div>
+    </div>
+  </div>
 </div>

@@ -5,11 +5,11 @@ import { ListProdutoComponent } from './list-produto/list-produto.component';
 
 const routes: Routes = [
   {
-    path: 'create-produto',
+    path: 'create',
     component: CreateProdutoComponent
   },
   {
-    path: 'list-produto',
+    path: 'list',
     component: ListProdutoComponent
   },
   {

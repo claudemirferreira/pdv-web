@@ -22,7 +22,6 @@ export class ListProdutoComponent implements OnInit {
   lista = new MatTableDataSource<Produto>();
   produto: Produto;
   pageableDTO: PageableDTO;
-  //lista: Produto[];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -34,8 +33,6 @@ export class ListProdutoComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 20];
   // MatPaginator Output
   pageEvent: PageEvent;
-  size: 10;
-  totalElements: number;
 
   constructor(
     private service: ProdutoService,
@@ -46,9 +43,9 @@ export class ListProdutoComponent implements OnInit {
 
   ngOnInit(): void {
     this.pageableDTO = new PageableDTO();
-    this.pageableDTO.nome = "o";
+    this.pageableDTO.nome = '';
     this.pageableDTO.page = 0;
-    this.pageableDTO.size = 5;
+    this.pageableDTO.size = 7;
     this.pesquisar();
   }
 

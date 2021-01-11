@@ -1,93 +1,116 @@
-table {
-    width: 100%;
-    background-color: #eaeaea;
-    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
-  }
-  
-  .mat-cell {
-    font-size: 10px;
-    min-height: 20px;
-    border: 0.5px solid rgb(128,128,128);
-    padding-left: 5px;
-  
-  }
-  
-  .mat-header-cell {
-    background-color: #1976d2;
-    border: 0.5px solid rgb(128,128,128);
-    font-weight:bold;
-    font-size: 10px;
-    color: white;
-    font: 500 14px/20px Roboto, "Helvetica Neue", sans-serif;
-    letter-spacing: normal;
-    white-space: nowrap;
-    padding-left: 5px;
+$gray: #f0f0f0;
+$gray2: #e0e0e0;
+$gray3: #d0d0d0;
+$white: #ffffff;
+:host {
+  background: $gray;
+  display: block;
+}
 
+.main-content {
+  //border: 1px solid green;
+  background: $white;
+  min-height: 150px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-height: 700px) {
+  :host {
+    height: 100vh;
   }
-  
-  th.mat-sort-header-sorted {
-    color: black;
-  }
-  
-  tr.mat-header-row , mat-header-cell{
-      height: 30px;
-  }
-  
-  .check {
-    text-align: center;
-  }
-  
-  mat-card {
-    background-color: #eaeaea;
-  }
-  
-  mat-form-field {
-    margin-right: 12px;
-  }
-  
-  mat-select {
-    margin-right: 12px;
-  }
-  
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    min-width: 200px;
-    max-width: 250px;
-    width: 100%;
-  }
-  
-  .example-litle-width {
-    min-width: 150px;
-    max-width: 150px;
-    width: 100%;
-  }
-  
-  
-  .example-container {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
-  
-  .mat-header-cell.mat-sort-header-sorted {
-    color: black;
-  }
-  
-  .cdk-visually-hidden{
-    display: none !important;
-  }
-  
-  mat-paginator {
-    background-color: #eaeaea;
-    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
-  }
+}
+
+table {
+  width: 100%;
+  background-color: #eaeaea;
+  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
+
+.mat-cell {
+  font-size: 10px;
+  min-height: 20px;
+  border: 0.5px solid rgb(128, 128, 128);
+  padding-left: 5px;
+}
+
+.mat-header-cell {
+  background-color: #1976d2;
+  border: 0.5px solid rgb(128, 128, 128);
+  font-weight: bold;
+  font-size: 10px;
+  color: white;
+  font: 500 14px/20px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+tr.mat-header-row,
+mat-header-cell {
+  height: 30px;
+}
+
+.check {
+  text-align: center;
+}
+
+mat-card {
+  background-color: #eaeaea;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+mat-select {
+  margin-right: 12px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  min-width: 200px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.example-litle-width {
+  min-width: 150px;
+  max-width: 150px;
+  width: 100%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+.cdk-visually-hidden {
+  display: none !important;
+}
+
+mat-paginator {
+  background-color: #eaeaea;
+  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
