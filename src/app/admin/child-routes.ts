@@ -3,7 +3,7 @@ export const childRoutes = [
     path: 'venda',
     loadChildren: () =>
       import('./venda/venda.module').then(m => m.VendaModule),
-      data: { icon: 'attach_money', text: 'Venda' }
+      data: { icon: 'add_shopping_cart', text: 'Venda' }
   },
   {
     path: 'produto',

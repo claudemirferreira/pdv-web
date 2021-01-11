@@ -27,9 +27,7 @@ export class ListProdutoComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   displayedColumns: string[] = ["nome", "precoVenda", "precoCompra", "acao"];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  length = 0;
-  pageSize = 10;
-  pageIndex = 1;
+  
   pageSizeOptions: number[] = [5, 10, 20];
   // MatPaginator Output
   pageEvent: PageEvent;
@@ -78,6 +76,12 @@ export class ListProdutoComponent implements OnInit {
         this.showError();
       }
     );
+  }
+
+
+
+  openDialogNewProduto() {
+    this.openDialogProduto(new Produto());
   }
 
   openDialogProduto(produto: Produto) {
