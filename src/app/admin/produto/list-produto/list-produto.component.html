@@ -56,7 +56,10 @@
             <th mat-header-cell *matHeaderCellDef>&nbsp;Ação</th>
             <td mat-cell *matCellDef="let element">
               <button (click)="openDialogProduto(element)">
-                <mat-icon>exit_to_app</mat-icon>
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button (click)="delete(element.id)">
+                <mat-icon>delete_forever</mat-icon>
               </button>
             </td>
           </ng-container>

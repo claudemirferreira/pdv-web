@@ -78,8 +78,6 @@ export class ListProdutoComponent implements OnInit {
     );
   }
 
-
-
   openDialogNewProduto() {
     this.openDialogProduto(new Produto());
   }
@@ -96,6 +94,20 @@ export class ListProdutoComponent implements OnInit {
       this.produto = result;
       this.ngOnInit();
     });
+  }
+
+  delete(id: number) {
+    return this.service.remove(id).subscribe(
+      () => {
+        console.log("saved");
+        this.showSuccess();
+        this.pesquisar();
+      },
+      (error) => {
+        this.showError();
+        console.log(JSON.stringify(error));
+      }
+    );
   }
 
   pageChange($event) {

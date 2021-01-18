@@ -29,11 +29,11 @@
           </mat-card-content>
           <mat-card-actions>
 
-            <button mat-button>
-              <mat-icon >add_circle</mat-icon>Novo
+            <button (click)="onClose()">
+              <mat-icon>undo</mat-icon>Voltar
             </button>
-            <button (click)="salvar()">
-              <mat-icon>exit_to_app</mat-icon>Salvar
+            <button >
+              <mat-icon>check_circle</mat-icon>Salvar
             </button>
           </mat-card-actions>
         </mat-card>

@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ResponseApi } from 'src/app/shared/model/response-api';
@@ -38,31 +38,19 @@ export class CreateProdutoComponent implements OnInit {
     private service: ProdutoService,
     private ngxLoader: NgxUiLoaderService,
     private toastr: ToastrService,
+    public dialogRef: MatDialogRef<CreateProdutoComponent>,
     @Inject(MAT_DIALOG_DATA) public produto: Produto
   ) {
     
     this.showSuccess();
   }
 
-  onNoClick(): void {
-    //this.dialogRef.close();
+  onClose(): void {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {
     this.createForm();
-  }
-
-
-  ngOnInit1(): void {
-
-    this.produto = new Produto();
-    this.produto.nome = 'teste';
-    this.produto.precoCompra = 20;
-    this.produto.precoVenda = 40;
-    console.log(JSON.stringify(this.produto));
-    this.salvar();
-    this.showSuccess();
-
   }
 
   createForm() {
@@ -74,11 +62,11 @@ export class CreateProdutoComponent implements OnInit {
   }
 
   salvar(){
-    this.ngxLoader.start();
-    this.service.save(this.produto).subscribe((responseApi: ResponseApi) => {
-      console.log(responseApi['content']);
-      this.showSuccess();
-      this.ngxLoader.stop();
+    //this.ngxLoader.start();
+    this.service.create(this.produto).subscribe((responseApi: ResponseApi) => {
+      //this.showSuccess();
+      this.onClose();
+      //this.ngxLoader.stop();
     }, err => {
       console.log('################error');
       this.showError();
