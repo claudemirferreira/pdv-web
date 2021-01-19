@@ -27,7 +27,6 @@ import { MaterialModule } from './shared/material/material.module';
     SharedModule,    
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
-    MaterialModule,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],

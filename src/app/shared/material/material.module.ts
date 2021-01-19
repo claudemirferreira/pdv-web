@@ -107,7 +107,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatSidenavModule,
     MatPaginatorModule,
     NgxUiLoaderModule,
-    ToastrModule, 
+    ToastrModule,
 
   ],
 })

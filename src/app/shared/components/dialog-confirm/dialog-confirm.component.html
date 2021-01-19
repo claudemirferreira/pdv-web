@@ -1,0 +1,11 @@
+<div>
+    <h3 mat-dialog-title>Messagem de Confirmação </h3>
+    <div mat-dialog-content>
+        <p>Deseja excluir o registro {{data.nome}}?</p>
+        
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancel()">Cancelar</button>
+        <button mat-button (click)="ok()">OK</button>
+    </div>
+</div>

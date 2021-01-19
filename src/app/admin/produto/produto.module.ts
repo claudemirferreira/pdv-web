@@ -10,7 +10,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
   declarations: [CreateProdutoComponent, ListProdutoComponent],
   imports: [
     ProdutoRoutingModule, 
-    MaterialModule
+    MaterialModule,
     
   ]
 })

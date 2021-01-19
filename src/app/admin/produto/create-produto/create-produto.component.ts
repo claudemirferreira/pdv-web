@@ -62,11 +62,11 @@ export class CreateProdutoComponent implements OnInit {
   }
 
   salvar(){
-    //this.ngxLoader.start();
+    this.ngxLoader.start();
     this.service.create(this.produto).subscribe((responseApi: ResponseApi) => {
-      //this.showSuccess();
+      this.showSuccess();
       this.onClose();
-      //this.ngxLoader.stop();
+      this.ngxLoader.stop();
     }, err => {
       console.log('################error');
       this.showError();

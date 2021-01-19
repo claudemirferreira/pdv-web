@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { Component, Inject, OnInit, Optional, ViewChild } from "@angular/core";
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { MatPaginator, PageEvent } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
@@ -10,9 +10,9 @@ import { ResponseApi } from "src/app/shared/model/response-api";
 import { Produto } from "../produto";
 import { ProdutoService } from "../produto.service";
 import { CreateProdutoComponent } from "../../produto/create-produto/create-produto.component";
+import { DialogConfirmComponent } from "src/app/shared/components/dialog-confirm/dialog-confirm.component";
 
 const ELEMENT_DATA: Produto[] = [];
-
 @Component({
   selector: "app-list-produto",
   templateUrl: "./list-produto.component.html",
@@ -36,7 +36,8 @@ export class ListProdutoComponent implements OnInit {
     private service: ProdutoService,
     private ngxLoader: NgxUiLoaderService,
     private toastr: ToastrService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   ngOnInit(): void {
@@ -93,6 +94,22 @@ export class ListProdutoComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       this.produto = result;
       this.ngOnInit();
+    });
+  }
+
+  messageConfirm(produto: Produto) {
+    console.log("okkkk");
+    this.produto = produto;
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: "400px",
+      data: this.produto
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == 'ok'){
+        this.delete(this.produto.id);
+        this.ngOnInit();
+      }
     });
   }
 
